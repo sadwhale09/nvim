@@ -1,8 +1,9 @@
+-- NON-PLUGIN RELATED KEYBINDS
 -- Set leader key to space
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 -- Open file explorer
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+-- vim.keymap.set('n', '<leader>e', vim.cmd.Ex)
 
 -- Move selected lines up and down
 -- vim.keymap.set('n', '<M-j>', ":m '>+1<CR>gv=gv'")
@@ -35,3 +36,34 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Make current file executable
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
+-- Clear search highlight
+vim.keymap.set('n', '<leader>nh', ':nohl<CR>')
+
+-- Deleted single character does not go to the copy register
+vim.keymap.set('n', 'x', '"_x')
+
+-- Increment and decrement numbers
+vim.keymap.set('n', '<leader>=', '<C-a>')
+vim.keymap.set('n', '<leader>-', '<C-x>')
+
+-- Splits
+vim.keymap.set('n', '<leader>sv', '<C-w>v') -- split window vertically
+vim.keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
+vim.keymap.set('n', '<leader>se', '<C-w>=') -- make split equal width
+vim.keymap.set('n', '<leader>sx', ':close<CR>') -- close current pane
+-- Navigation between splits with Ctrl+{hjkl}
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Tabs
+vim.keymap.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
+vim.keymap.set('n', '<leader>tx', ':tabclose<CR>') -- close current tab
+-- Next tab
+vim.keymap.set('n', '<Tab>', ':tabn<CR>')
+vim.keymap.set('n', '<leader>tn', ':tabn<CR>')
+vim.keymap.set('n', 'L', ':tabn<CR>')
+-- Previous tab
+vim.keymap.set('n', '<leader>tp', ':tabp<CR>')
+vim.keymap.set('n', 'H', ':tabp<CR>')

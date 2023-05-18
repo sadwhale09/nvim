@@ -60,4 +60,13 @@ return require('packer').startup(function(use)
     -- Comments (gcc and stuff)
     use('tpope/vim-commentary')
 
-end)
+    -- File explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            -- 'nvim-tree/nvim-web-devicons', -- optional
+        },
+        config = function()
+            require("nvim-tree").setup {}
+    end
+}end)
