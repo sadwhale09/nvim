@@ -1,4 +1,5 @@
-# Neovim configuration
+# My new nvim config
 
-Based on [Josean Martinez video](https://www.youtube.com/watch?v=vdn_pKJUda8&list=TLPQMjIxMTIwMjKEAEzant3hsQ&index=35).
-And his [GitHub repo](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim).
+## I'm a sweaty programmer
+
+### I don't care about eye-candy color scheme
