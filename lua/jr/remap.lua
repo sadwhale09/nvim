@@ -67,3 +67,6 @@ vim.keymap.set('n', 'L', ':tabn<CR>')
 -- Previous tab
 vim.keymap.set('n', '<leader>tp', ':tabp<CR>')
 vim.keymap.set('n', 'H', ':tabp<CR>')
+
+-- Trigger path selection
+vim.keymap.set('i', './', '<C-x><C-f>')
