@@ -72,3 +72,7 @@ vim.keymap.set('n', 'H', ':tabp<CR>')
 
 -- Trigger path selection
 vim.keymap.set('i', './', '<C-x><C-f>')
+
+-- Terminal split
+-- TODO: trigger terminal in bottom split with lower height
+vim.keymap.set('n', '<leader>t', ':sp | :term <CR>')
