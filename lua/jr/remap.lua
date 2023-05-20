@@ -77,8 +77,5 @@ vim.keymap.set('n', 'H', ':tabp<CR>')
 -- Trigger path selection
 vim.keymap.set('i', './', '<C-x><C-f>')
 
--- Terminal splits; TODO: trigger terminal in bottom split with lower height
 -- Horizontal terminal split
-vim.keymap.set('n', '<leader>t', ':sp | :term <CR>i')
--- Vertical terminal split
-vim.keymap.set('n', '<leader>tv', ':vsp | :term <CR>i')
+vim.keymap.set('n', '<leader>`', '<C-w>30s <C-w>j :terminal<CR>i')
