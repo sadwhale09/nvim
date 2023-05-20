@@ -16,6 +16,8 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 -- Jumping between search results
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+-- Hitting bottom
+vim.keymap.set('n', 'G', 'Gzz')
 
 -- Keep copied text while pasting over
 vim.keymap.set('x', 'p', '\"_dP')
