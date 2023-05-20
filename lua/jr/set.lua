@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+vim.cmd('colorscheme industry')
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -31,14 +32,3 @@ vim.opt.colorcolumn = '80'
 
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
-
-
-
-
-
-
-vim.cmd('colorscheme industry')
-
-
-
-
