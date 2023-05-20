@@ -78,4 +78,8 @@ vim.keymap.set('n', 'H', ':tabp<CR>')
 vim.keymap.set('i', './', '<C-x><C-f>')
 
 -- Horizontal terminal split
-vim.keymap.set('n', '<leader>`', '<C-w>30s <C-w>j :terminal<CR>i')
+vim.keymap.set('n', '<leader>`', '<C-w>12s :terminal<CR>i')
+-- Vertical terminal split
+vim.keymap.set('n', '<leader>!', '<C-w>v :terminal<CR>i')
+-- Exit terminal mode
+vim.keymap.set('t', '<Esc><Esc>', '<c-\\><c-n>', { desc = 'Enter Normal Mode' })

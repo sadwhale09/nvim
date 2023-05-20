@@ -29,7 +29,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = '80'
 
-
+vim.opt.splitbelow = true -- Put new windows below current
+vim.opt.splitright = true -- Put new windows right of current
 
 
 
