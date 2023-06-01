@@ -75,7 +75,7 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>')
 vim.keymap.set('n', 'H', ':tabp<CR>')
 
 -- Trigger path selection
-vim.keymap.set('i', './', '<C-x><C-f>')
+-- vim.keymap.set('i', './', '<C-x><C-f>')
 
 -- Horizontal terminal split
 vim.keymap.set('n', '<leader>`', '<C-w>12s :terminal<CR>i')
