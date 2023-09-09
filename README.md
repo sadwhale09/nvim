@@ -1,5 +1,7 @@
-# My new nvim config
+# Nvim config started from kickstart.nvim
 
-## I'm a sweaty programmer
+- Plugin manager is lazy.nvim
+- For now, everything is in init.lua
+- May organize that in the future
 
-### I don't care about eye-candy color scheme
+
