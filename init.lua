@@ -154,6 +154,15 @@ require('lazy').setup({
     end,
   },
 
+  -- Lazygit plugin
+  {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
