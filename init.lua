@@ -378,8 +378,8 @@ vim.keymap.set('n', '<ESC>', ':noh<CR>', { desc = 'Clear highlight' })
 -- Open file tree
 vim.keymap.set('n', '<leader>e', ' :Neotree toggle<CR>', { desc = 'Open file tree' })
 
--- Clear highlight
-vim.keymap.set('n', '<leader>t', ':16 sp | :term<CR>', { desc = 'Open [t]erminal at bottom' })
+-- Open terminam in bottom split
+vim.keymap.set('n', '<leader>t', ':16 sp | :term<CR>i', { desc = 'Open [t]erminal at bottom' })
 
 -- Escape terminal mode
 vim.keymap.set('t', 'jk', '<C-\\><C-n>', { desc = 'Escape terminal mode' })
