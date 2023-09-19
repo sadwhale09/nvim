@@ -186,12 +186,24 @@ require('lazy').setup({
     },
   },
 
+  -- {
+  --   -- Theme inspired by Atom
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
+  --
+  -- Colorscheme
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    "folke/tokyonight.nvim",
+    lazy = false,
     priority = 1000,
+    opts = {},
+    style = 'night',
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'tokyonight'
     end,
   },
 
@@ -202,7 +214,8 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        -- theme = 'onedark',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
@@ -318,8 +331,8 @@ vim.wo.relativenumber = true
 vim.wo.linebreak = true
 
 -- Indent settings
-vim.o.tabstop=4
-vim.o.shiftwidth=4
+-- vim.o.tabstop=4
+-- vim.o.shiftwidth=4
 vim.o.expandtab=true
 
 
