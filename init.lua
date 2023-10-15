@@ -203,7 +203,8 @@ require('lazy').setup({
     opts = {},
     style = 'night',
     config = function()
-      vim.cmd.colorscheme 'tokyonight'
+      -- vim.cmd.colorscheme 'tokyonight'
+      vim.cmd.colorscheme 'koehler'
     end,
   },
 
@@ -214,8 +215,8 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        -- theme = 'onedark',
-        theme = 'tokyonight',
+        -- theme = 'tokyonight',
+        theme = '16color',
         component_separators = '|',
         section_separators = '',
       },
