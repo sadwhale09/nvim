@@ -88,6 +88,9 @@ require('lazy').setup({
     end,
   },
 
+  -- Vim Surround
+  'tpope/vim-surround',
+
   -- File Tree
   -- Unless you are still migrating, remove the deprecated commands from v1.x
   -- vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
@@ -425,7 +428,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'javascript' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'javascript' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -597,7 +600,7 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
-cmp.setup {
+cmp.setup{
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
