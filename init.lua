@@ -304,6 +304,9 @@ vim.wo.linebreak = true
 -- vim.o.shiftwidth=4
 vim.o.expandtab=true
 
+-- 80-char column
+vim.opt.colorcolumn='80'
+
 
 -- Disable wrap
 vim.o.wrap = false
