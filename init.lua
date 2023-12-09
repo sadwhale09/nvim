@@ -305,7 +305,7 @@ vim.wo.linebreak = true
 vim.o.expandtab=true
 
 -- Holy 80-column line
-vim.o.colorcolumn=80
+vim.opt.colorcolumn='80'
 
 
 -- Disable wrap
