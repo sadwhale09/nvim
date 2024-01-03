@@ -34,7 +34,7 @@ require('lazy').setup({
   'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
+  -- 'tpope/vim-sleuth',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -299,9 +299,9 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.linebreak = true
 
--- Indent settings
--- vim.o.tabstop=4
--- vim.o.shiftwidth=4
+-- Indent settings (see 'tpope/vim-sleuth' above)
+vim.o.tabstop=4
+vim.o.shiftwidth=4
 vim.o.expandtab=true
 
 -- Holy 80-column line
@@ -659,8 +659,11 @@ local function run_curr_python_file()
     -- Determine terminal window split and launch terminal
     local percent_of_win = 0.4
     local curr_win_height = vim.api.nvim_win_get_height(0) -- Current window height
+    local curr_win_width = vim.api.nvim_win_get_width(0) -- Current window width
     local term_height = math.floor(curr_win_height * percent_of_win) -- Terminal height
-    vim.cmd(":below " .. term_height .. "split | term") -- Launch terminal (horizontal split)
+    local term_width = math.floor(curr_win_width * 0.5) -- Terminal height
+    -- vim.cmd(":below " .. term_height .. "split | term") -- Launch terminal (horizontal split)
+    vim.cmd(":below " .. term_width .. "vsplit | term") -- Launch terminal (vertical split)
 
     -- Press keys to run python command on current file
     vim.api.nvim_feedkeys(py_cmd, "t", false)
