@@ -286,7 +286,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Margin on top and bottom at scrolling
-vim.o.scrolloff = 10
+vim.o.scrolloff = 5
 
 -- Set splits default positions
 vim.o.splitbelow = true
