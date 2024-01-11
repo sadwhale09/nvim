@@ -647,29 +647,57 @@ cmp.setup{
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
--- Shortcut to execute python files
-local function run_curr_python_file()
-    -- Get file name in the current buffer
-    local file_name = vim.api.nvim_buf_get_name(0)
+-- -- Shortcut to execute python files
+-- local function run_curr_python_file()
+--     -- Get file name in the current buffer
+--     local file_name = vim.api.nvim_buf_get_name(0)
+--
+--     -- Get terminal codes for running python file
+--     -- ("i" to enter insert before typing rest of the command)
+--     local py_cmd = vim.api.nvim_replace_termcodes("ipython \"" .. file_name .. "\"<cr>", true, false, true)
+--
+--     -- Determine terminal window split and launch terminal
+--     local percent_of_win = 0.4
+--     local curr_win_height = vim.api.nvim_win_get_height(0) -- Current window height
+--     local curr_win_width = vim.api.nvim_win_get_width(0) -- Current window width
+--     local term_height = math.floor(curr_win_height * percent_of_win) -- Terminal height
+--     local term_width = math.floor(curr_win_width * 0.5) -- Terminal height
+--     -- vim.cmd(":below " .. term_height .. "split | term") -- Launch terminal (horizontal split)
+--     vim.cmd(":below " .. term_width .. "vsplit | term") -- Launch terminal (vertical split)
+--
+--     -- Press keys to run python command on current file
+--     vim.api.nvim_feedkeys(py_cmd, "t", false)
+-- end
+--
+-- vim.keymap.set({'n'}, '<F4>', '', {
+--     desc = "Run .py file via Neovim built-in terminal",
+--     callback = run_curr_python_file
+-- })
 
-    -- Get terminal codes for running python file
-    -- ("i" to enter insert before typing rest of the command)
-    local py_cmd = vim.api.nvim_replace_termcodes("ipython \"" .. file_name .. "\"<cr>", true, false, true)
+-- Execute various filetypes:
+local function save_and_exec()
+    local function run_term(command, ...)
+        vim.cmd('term')
+        local terminal_id = vim.api.nvim_eval('b:terminal_job_id')
+        vim.api.nvim_chan_send(terminal_id, string.format(command .. '\n', ...))
 
-    -- Determine terminal window split and launch terminal
-    local percent_of_win = 0.4
-    local curr_win_height = vim.api.nvim_win_get_height(0) -- Current window height
-    local curr_win_width = vim.api.nvim_win_get_width(0) -- Current window width
-    local term_height = math.floor(curr_win_height * percent_of_win) -- Terminal height
-    local term_width = math.floor(curr_win_width * 0.5) -- Terminal height
-    -- vim.cmd(":below " .. term_height .. "split | term") -- Launch terminal (horizontal split)
-    vim.cmd(":below " .. term_width .. "vsplit | term") -- Launch terminal (vertical split)
+        -- This was erroring:
+        -- vim.keymap.nnoremap({'q', '<cmd>q<CR>', buffer = true})
+        vim.cmd('stopinsert')
+    end
 
-    -- Press keys to run python command on current file
-    vim.api.nvim_feedkeys(py_cmd, "t", false)
+    local ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    if ft == 'python' then
+        vim.cmd('silent! write')
+        vim.cmd('sp')
+        run_term('python3 %s', vim.fn.expand('%'))
+    elseif ft == 'tex' then
+        vim.cmd('silent! write')
+        vim.cmd('!pdflatex %')
+    end
 end
-
-vim.keymap.set({'n'}, '<F4>', '', {
-    desc = "Run .py file via Neovim built-in terminal",
-    callback = run_curr_python_file
+--
+vim.keymap.set({'n'}, '<F5>', '', {
+    desc = "Save and run file via Neovim built-in terminal",
+    callback = save_and_exec
 })
