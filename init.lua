@@ -704,7 +704,7 @@ local function save_and_exec()
     end
 end
 --
-vim.keymap.set({'n'}, '<F5>', '', {
+vim.keymap.set({'n'}, '<F4>', '', {
     desc = "Save and run file via Neovim built-in terminal",
     callback = save_and_exec
 })
