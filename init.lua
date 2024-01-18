@@ -373,7 +373,7 @@ vim.keymap.set("n", "<leader>x", ":close<CR>", { desc = "Close the current buffe
 
 -- Escape to normal mode
 vim.keymap.set("i", "JK", "<ESC>", { desc = "Escape insert mode" })
-vimrkeymap.set("t", "JK", "<C-\\><C-n>", { desc = "Escape terminal mode" })
+vim.keymap.set("t", "JK", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 
 -- Clear highlight
 vim.keymap.set("n", "<ESC>", ":noh<CR>", { desc = "Clear highlight" })
