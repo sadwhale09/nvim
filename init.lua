@@ -371,8 +371,9 @@ vim.keymap.set("n", "<leader>z", " :ZenMode<CR>", { desc = "Toggle Zen Mode" })
 -- Close current buffer (window/tab)
 vim.keymap.set("n", "<leader>x", ":close<CR>", { desc = "Close the current buffer" })
 
--- Escape insert mode
-vim.keymap.set("i", "jk", "<ESC>", { desc = "Escape insert mode" })
+-- Escape to normal mode
+vim.keymap.set("i", "JK", "<ESC>", { desc = "Escape insert mode" })
+vimrkeymap.set("t", "JK", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 
 -- Clear highlight
 vim.keymap.set("n", "<ESC>", ":noh<CR>", { desc = "Clear highlight" })
@@ -382,9 +383,6 @@ vim.keymap.set("n", "<leader>e", " :Neotree toggle<CR>", { desc = "Open file tre
 
 -- Open terminam in bottom split
 vim.keymap.set("n", "<leader>t", ":16 sp | :term<CR>i", { desc = "Open [t]erminal at bottom" })
-
--- Escape terminal mode
-vimrkeymap.set("t", "jk", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
