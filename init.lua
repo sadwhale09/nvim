@@ -298,7 +298,7 @@ require("lazy").setup({
 -- NOTE: You can change these options as you wish!
 
 -- No .swp file
-vim.o.swapfile = ""
+-- vim.o.swapfile = ""
 
 -- Better navibation between windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -331,8 +331,11 @@ vim.opt.colorcolumn = "80"
 -- Disable wrap
 vim.o.wrap = false
 
--- Enable mouse mode
+-- Disable mouse mode
 vim.o.mouse = ""
+
+-- Don't show the mode, since it's already in status line
+vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
