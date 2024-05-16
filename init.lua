@@ -71,6 +71,18 @@ require("lazy").setup({
 		},
 	},
 
+    -- Medicine to big files that fry the CPU
+    {
+        "LunarVim/bigfile.nvim",
+        event = "BufReadPre",
+        opts = {
+            filesize = 2, -- kick in the plugin if the file is > 2MiB
+        },
+        config = function (_, opts)
+            require("bigfile").setup(opts)
+        end
+    },
+
 	-- Braces autopairs
 	{
 		"windwp/nvim-autopairs",
