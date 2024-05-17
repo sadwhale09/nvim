@@ -602,7 +602,7 @@ local servers = {
 	-- 		completeUnimported = true,
 	-- 	},
 	-- },
-	-- pyright = {},
+	pyright = {},
 	-- rust_analyzer = {},
 	-- tsserver = {},
 
@@ -623,6 +623,17 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require("mason-lspconfig")
+-- require("mason-tool-installer").setup({
+--     ensure_installed = {
+--         "black",
+--         "debugpy",
+--         "flake8",
+--         "isort",
+--         "mypy",
+--         "pylint",
+--     }
+-- })
+
 
 mason_lspconfig.setup({
 	ensure_installed = vim.tbl_keys(servers),
