@@ -252,6 +252,16 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		build = ":TSUpdate",
+        opts = {
+            enable = true,
+        },
+        indent = {
+            enable = true,
+        },
+        auto_install = true,  -- Instals syntax support when file opened
+        ensure_installed = {
+            "lua", "makdown", "python"
+        },
 	},
 
 	{
