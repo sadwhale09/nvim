@@ -424,6 +424,9 @@ vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
 -- vim.keymap.set('n', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move line down' })
 -- vim.keymap.set('n', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move line up' })
 
+-- Replace every occurence of text under cursor
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
@@ -623,14 +626,15 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require("mason-lspconfig")
+
 -- require("mason-tool-installer").setup({
 --     ensure_installed = {
---         "black",
---         "debugpy",
---         "flake8",
---         "isort",
---         "mypy",
+--         "black",  -- PEP8 formatting on save
+--         "isort",  -- sorting imports on save
 --         "pylint",
+--         --         "debugpy",
+--         --         "flake8",
+--         --         "mypy",
 --     }
 -- })
 
