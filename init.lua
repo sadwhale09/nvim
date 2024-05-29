@@ -479,7 +479,7 @@ require("nvim-treesitter.configs").setup({
 	ensure_installed = { "c", "cpp", "go", "lua", "rust", "tsx", "typescript", "vimdoc", "vim", "javascript" },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-	auto_install = false,
+	auto_install = true,
 
 	modules = {},
 	sync_install = false,
