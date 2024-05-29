@@ -137,7 +137,7 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
-		vim.keymap.set("n", "<leader>lg", " :LazyGit<CR>", { desc = "[L]azy [G]it" }),
+		vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>", { desc = "[L]azy [G]it" }),
 	},
 
 	-- Useful plugin to show you pending keybinds.
