@@ -407,7 +407,7 @@ vim.keymap.set("t", "JK", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 vim.keymap.set("n", "<ESC>", ":noh<CR>", { desc = "Clear highlight" })
 
 -- Open file tree
-vim.keymap.set("n", "<leader>e", " :Neotree toggle<CR>", { desc = "Open file tree" })
+vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Open file tree" })
 
 -- Open terminam in bottom split
 vim.keymap.set("n", "<leader>t", ":16 sp | :term<CR>i", { desc = "Open [t]erminal at bottom" })
