@@ -50,5 +50,5 @@ vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
 -- vim.keymap.set('n', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move line up' })
 
 -- Replace every occurence of text under cursor
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Substitute all occ. beneath cursor"})
 
