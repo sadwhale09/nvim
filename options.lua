@@ -10,6 +10,7 @@ vim.o.scrolloff = 5
 
 -- Set splits default positions
 vim.o.splitbelow = true
+vim.o.splitright = true
 
 -- Set highlight on search
 vim.o.hlsearch = true

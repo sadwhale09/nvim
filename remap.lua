@@ -35,6 +35,7 @@ vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Open file tree
 
 -- Open terminam in bottom split
 vim.keymap.set("n", "<leader>t", ":16 sp | :term<CR>i", { desc = "Open [t]erminal at bottom" })
+vim.keymap.set("n", "<leader>T", ":vsp | :term<CR>i", { desc = "Open [T]erminal on vertical split" })
 
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
