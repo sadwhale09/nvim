@@ -18,7 +18,7 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Toggle Zen Mode
-vim.keymap.set("n", "<leader>z", " :ZenMode<CR>", { desc = "Toggle Zen Mode" })
+vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
 
 -- Close current buffer (window/tab)
 vim.keymap.set("n", "<leader>x", ":close<CR>", { desc = "Close the current buffer" })
