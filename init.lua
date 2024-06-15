@@ -731,3 +731,6 @@ vim.keymap.set({ "n" }, "<F4>", "", {
 	desc = "Save and run file via Neovim built-in terminal",
 	callback = save_and_exec,
 })
+
+-- Set wrap for markdown files
+vim.cmd("autocmd FileType markdown setlocal wrap")
