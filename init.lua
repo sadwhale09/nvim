@@ -610,6 +610,9 @@ local function save_and_exec()
 	elseif ft == "tex" then
 		vim.cmd("silent! write")
 		vim.cmd("!pdflatex %")
+	elseif ft == "markdown" then
+		vim.cmd("silent! write")
+		vim.cmd("!pandoc % -o %.pdf && zathura %.pdf&")
 	end
 end
 --
