@@ -1,5 +1,5 @@
-require("options")
-require("remap")
+require("sadwhale.options")
+require("sadwhale.remap")
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
